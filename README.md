@@ -29,7 +29,7 @@ This project is built with .
 - Tailwind CSS
 
 ## 🌍 Stay Connected
-- Website: [checkcle.deno.dev](https://checkcle.deno.dev)
+- Website: [checkcle.io](https://checkcle.io)
 - GitHub Repository: https://github.com/operacle/checkcle
 - Community Channels: Engage via discussions and issues!
 - Join our discord community: https://discord.gg/xs9gbubGwX
