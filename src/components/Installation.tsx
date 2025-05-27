@@ -60,6 +60,9 @@ const Installation = () => {
               </div>
               <pre className="bg-black/50 p-4 rounded-md overflow-x-auto">
                 <code className="text-gray-300">{`
+
+version: '3.9'
+
 services:
   checkcle:
     image: operacle/checkcle:latest
@@ -68,14 +71,12 @@ services:
     ports:
       - "8090:8090"  # Web Application
     volumes:
-      - pb_data:/app/pb_data  # Ensure persistent data across rebuilds
+      - /opt/pb_data:/mnt/pb_data  # Host directory mapped to container path
     ulimits:
       nofile:
         soft: 4096
         hard: 8192
-
-volumes:
-  pb_data:  # Docker-managed volume for data persistence`}</code>
+`}</code>
               </pre>
             </div>
           </div>

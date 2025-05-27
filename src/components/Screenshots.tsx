@@ -12,6 +12,7 @@ const Screenshots = () => {
         title: "Uptime Monitoring",
         description: "Monitor your website's availability and performance with real-time alerts",
         imageSrc: "/uploads/checkcle-black.png",
+        secondaryImage: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/checkcle-detailpage.png",
         url: "checkcle.io/dashboard",
       }
     },
@@ -31,7 +32,7 @@ const Screenshots = () => {
       content: {
         title: "SSL & Domain Monitoring",
         description: "Track SSL certificates expiration and domain health status",
-        imageSrc: "/uploads/alerts.png",
+        imageSrc: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/ssl-domain.png",
         url: "checkcle.io/ssl",
       }
     },
@@ -41,8 +42,8 @@ const Screenshots = () => {
       content: {
         title: "Schedule & Incident",
         description: "Track and manage incidents with detailed timeline and resolution status",
-        imageSrc: "/uploads/1315e731-7803-41e7-9eeb-5d53036ea5ff.png",
-        secondaryImage: "/uploads/66c277d2-d29c-489b-a567-a35cd14fae3a.png",
+        imageSrc: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/maintenance-dahboard.png",
+        secondaryImage: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/incident-dashboard.png",
         url: "checkcle.io/incidents",
       }
     },
@@ -73,7 +74,7 @@ const Screenshots = () => {
       content: {
         title: "Settings Panel",
         description: "Customize your monitoring preferences and notification settings",
-        imageSrc: "/uploads/monitoring.png",
+        imageSrc: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/mail-settings.png",
         url: "checkcle.io/settings",
       }
     }

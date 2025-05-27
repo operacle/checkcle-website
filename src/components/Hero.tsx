@@ -50,7 +50,7 @@ volumes:
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white/90 hover:bg-white/20 transition-colors mb-6 group"
             >
               <Rocket className="w-4 h-4" />
-              <span>Initial Released V1.0.0</span>
+              <span>Initial Released V1.2.0</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
 
@@ -133,7 +133,9 @@ volumes:
               <div className="relative group max-w-3xl mx-auto">
                 <div onClick={handleCopy} className="flex items-center gap-2 bg-emerald-950/50 backdrop-blur-sm px-6 py-4 rounded-xl cursor-pointer border border-emerald-800/30 hover:bg-emerald-950/70 hover:border-emerald-700/50 transition-all duration-300 shadow-lg shadow-emerald-900/20">
                   <pre className="text-white text-sm text-left overflow-x-auto max-w-full">
-                    <code className="font-mono">{`services:
+                    <code className="font-mono">{`version: '3.9'
+
+services:
   checkcle:
     image: operacle/checkcle:latest
     container_name: checkcle
@@ -141,14 +143,12 @@ volumes:
     ports:
       - "8090:8090"  # Web Application
     volumes:
-      - pb_data:/app/pb_data  # Ensure persistent data across rebuilds
+      - /opt/pb_data:/mnt/pb_data  # Host directory mapped to container path
     ulimits:
       nofile:
         soft: 4096
         hard: 8192
-
-volumes:
-  pb_data:  # Docker-managed volume for data persistence`}</code>
+`}</code>
                   </pre>
                   <Copy className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors flex-shrink-0 ml-2" />
                 </div>
