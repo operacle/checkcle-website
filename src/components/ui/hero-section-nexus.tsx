@@ -634,7 +634,7 @@ const InteractiveHero: React.FC = () => {
     };
 
     const handleCopyCommand = () => {
-        navigator.clipboard.writeText('bash <(curl -fsSL https://checkcle.io/install.sh)');
+        navigator.clipboard.writeText('curl -fsSL https://checkcle.io/install.sh | bash');
     };
 
   return (
@@ -729,7 +729,7 @@ const InteractiveHero: React.FC = () => {
                 >
                     <div className="flex items-center gap-2 bg-gray-800/50 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700/50 transition-colors whitespace-nowrap border border-gray-600/30 hover:border-gray-500/50">
                         <code className="text-sm font-mono">
-                            bash &lt;(curl -fsSL https://checkcle.io/install.sh)
+                            curl -fsSL https://checkcle.io/install.sh | bash
                         </code>
                         <Copy className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
                     </div>
