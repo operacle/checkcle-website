@@ -53,8 +53,8 @@ const Screenshots = () => {
       content: {
         title: "Operational Status",
         description: "Public status page showing real-time system health and incidents",
-        imageSrc: "/uploads/7eb3d6eb-0fc6-44b7-9d3a-cef744234d5a.png",
-        secondaryImage: "/uploads/24d40cba-fc43-491b-8365-d57eb73834d8.png",
+        imageSrc: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/operational_page.png",
+        secondaryImage: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/public-status-page.png",
         url: "checkcle.io/status",
       }
     },
