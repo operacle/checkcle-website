@@ -664,7 +664,7 @@ const InteractiveHero: React.FC = () => {
                 Real-Time Infrastructure Monitoring with{' '}
                 <span className="inline-block h-[1.2em] sm:h-[1.2em] lg:h-[1.2em] overflow-hidden align-bottom">
                     <RotatingText
-                        texts={['Precision', 'Confidence', 'Reliability', 'Intelligence']}
+                        texts={['Self-Hosted', 'Privacy-First', 'Deploy Anywhere', 'Without Vendor Lock-In', 'Fully Controlled', 'Enterprise-Grade']}
                         mainClassName="text-emerald-400 mx-1"
                         staggerFrom={"last"}
                         initial={{ y: "-100%", opacity: 0 }}
