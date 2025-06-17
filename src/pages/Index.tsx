@@ -7,6 +7,7 @@ import Features from '../components/Features';
 import Screenshots from '../components/Screenshots';
 import TechStack from '../components/TechStack';
 import Installation from '../components/Installation';
+import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -19,6 +20,7 @@ const Index = () => {
       <Screenshots />
       <TechStack />
       <Installation />
+      <FAQ />
       <Footer />
     </div>
   );
