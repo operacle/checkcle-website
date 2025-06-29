@@ -12,7 +12,7 @@ const Screenshots = () => {
         title: "Uptime Monitoring",
         description: "Monitor your website's availability and performance with real-time alerts",
         imageSrc: "/uploads/checkcle-black.png",
-        secondaryImage: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/checkcle-detailpage.png",
+        secondaryImage: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/uptime-service-detail.png",
         url: "checkcle.io/dashboard",
       }
     },
