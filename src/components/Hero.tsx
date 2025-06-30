@@ -55,41 +55,7 @@ const Hero = () => {
 
       {/* Additional content below the hero */}
       <div className="relative bg-black text-white pt-20 pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Dashboard preview */}
-          <div className="w-full max-w-4xl mx-auto mb-10">
-            <div className="transform transition-all duration-300 hover:scale-[1.02]">
-              <div className="relative shadow-2xl shadow-emerald-500/20 rounded-xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent z-10 pointer-events-none"></div>
-                <DashboardPreview />
-              </div>
-            </div>
-          </div>
-
-          {/* Docker Compose section */}
-          <div className="flex flex-col items-center gap-8 max-w-4xl mx-auto">
-            <div className="w-full">
-              <p className="text-lg text-gray-300 mb-3 text-center">Or use Docker Compose:</p>
-              <div className="relative group max-w-3xl mx-auto">
-                <div className="relative bg-emerald-950/50 backdrop-blur-sm px-6 py-4 rounded-xl border border-emerald-800/30 hover:bg-emerald-950/70 hover:border-emerald-700/50 transition-all duration-300 shadow-lg shadow-emerald-900/20">
-                  <pre className="text-white text-sm overflow-x-auto max-w-full whitespace-pre-wrap">
-                    <code className="font-mono">{dockerComposeYml}</code>
-                  </pre>
-                  <button
-                    onClick={handleCopy}
-                    className="absolute top-3 right-3 p-1 bg-black/40 hover:bg-black/70 rounded-md"
-                    title="Copy to clipboard"
-                  >
-                    <Copy className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
-                  </button>
-                </div>
-              </div>
-              <p className="text-sm text-gray-400 mt-2 text-center">
-                Click the icon to copy the Docker Compose configuration
-              </p>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </section>
   );

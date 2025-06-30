@@ -57,15 +57,7 @@ const Footer = () => {
               </a>
             </div>
             <p className="text-center text-gray-400">
-           © {new Date().getFullYear()} Created and Proudly maintained  by{' '}
-            <a
-              href="https://github.com/tolaleng"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-white"
-            >
-              🇰🇭 tolaleng and contributors
-            </a>
+           © {new Date().getFullYear()}. CheckCle. Released under the MIT License. Created by: Tola Leng
           </p>
 
           </div>
