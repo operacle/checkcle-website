@@ -30,7 +30,7 @@ const GitHubStarButton = () => {
   return (
     <div className="flex justify-center">
       <a
-        href="https://github.com/ReamStack-Lab/reamstack"
+        href="https://github.com/operacle/checkcle"
         target="_blank"
         rel="noopener noreferrer"
         className="relative inline-block sm:w-36 w-14 h-[2.7em] mx-auto group dark:bg-black bg-white dark:border-white border-black border-2 rounded-lg">
