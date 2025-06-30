@@ -37,9 +37,9 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <img 
-                src="uploads/checkcle_logo1.svg" 
+                src="uploads/checkcle_logo.png" 
                 alt="CheckCle Logo" 
-                className="h-14 w-auto"
+                className="h-12 w-auto"
               />
             </div>
           </div>
