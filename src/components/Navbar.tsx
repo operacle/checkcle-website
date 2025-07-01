@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import GitHubStarButton from '@/components/ui/github-star-button';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,11 +37,13 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <img 
-                src="uploads/checkcle_logo.png" 
-                alt="CheckCle Logo" 
-                className="h-12 w-auto"
-              />
+              <Link to="/">
+                <img 
+                  src="uploads/checkcle_logo.png" 
+                  alt="CheckCle Logo" 
+                  className="h-10 w-auto"
+                />
+              </Link>
             </div>
           </div>
           <div className="hidden md:block">
@@ -49,6 +52,8 @@ const Navbar = () => {
               <a onClick={() => scrollToSection('features')} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors">Features</a>
               <a onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors">FAQ</a>
               <a href="https://docs.checkcle.io" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors">Docs</a>
+              <Link to="/sponsor" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Sponsor</Link>
+              <Link to="/support" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Support</Link>
               <GitHubStarButton />
             </div>
           </div>
@@ -70,6 +75,8 @@ const Navbar = () => {
             <a onClick={() => scrollToSection('features')} className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium cursor-pointer">Features</a>
             <a onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium cursor-pointer">FAQ</a>
             <a href="https://docs.checkcle.io" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors">Docs</a>
+            <Link to="/sponsor" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Sponsor</Link>
+            <Link to="/support" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Support</Link>
             <div className="px-3 py-2">
               <GitHubStarButton />
             </div>

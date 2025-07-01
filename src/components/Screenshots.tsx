@@ -6,33 +6,34 @@ import ScreenshotTabContent from './screenshot-tab-content';
 const Screenshots = () => {
   const tabs = [
     {
-      value: "uptime",
-      label: "Uptime Service Monitoring",
-      content: {
-        title: "Uptime Monitoring",
-        description: "Monitor your website's availability and performance with real-time alerts",
-        imageSrc: "/uploads/checkcle-black.png",
-        secondaryImage: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/uptime-service-detail.png",
-        url: "checkcle.io/dashboard",
-      }
-    },
-    {
       value: "server",
       label: "Instance Monitoring",
       content: {
         title: "Server Monitoring",
         description: "Track server resources, performance metrics, and system health",
-        imageSrc: "/uploads/27e13225-cb75-40fc-9c81-a81838c0698e.png",
+        imageSrc: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/instance-server-monitoring.png",
         url: "checkcle.io/server/node01",
       }
     },
+    {
+      value: "uptime",
+      label: "Uptime Service Monitoring",
+      content: {
+        title: "Uptime Monitoring",
+        description: "Monitor your website's availability and performance with real-time alerts",
+        imageSrc: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/uptime-monitoring.png",
+        secondaryImage: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/uptime-service-detail.png",
+        url: "checkcle.io/dashboard",
+      }
+    },
+    
     {
       value: "ssl",
       label: "SSL & Domain",
       content: {
         title: "SSL & Domain Monitoring",
         description: "Track SSL certificates expiration and domain health status",
-        imageSrc: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/ssl-domain.png",
+        imageSrc: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/ssl-monitoring.png",
         url: "checkcle.io/ssl",
       }
     },
@@ -42,8 +43,8 @@ const Screenshots = () => {
       content: {
         title: "Schedule & Incident",
         description: "Track and manage incidents with detailed timeline and resolution status",
-        imageSrc: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/maintenance-dahboard.png",
-        secondaryImage: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/incident-dashboard.png",
+        imageSrc: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/checkcle-schedule-maintenance.png",
+        //secondaryImage: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/incident-dashboard.png",
         url: "checkcle.io/incidents",
       }
     },
