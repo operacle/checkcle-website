@@ -5,7 +5,7 @@ Deno.serve(async (req: Request) => {
   
   // Try to serve the file normally first
   const response = await serveDir(req, {
-    fsRoot: "./dist",
+    fsRoot: "dist",
     quiet: true,
   });
   
@@ -13,7 +13,7 @@ Deno.serve(async (req: Request) => {
   if (response.status === 404 && !url.pathname.includes('.')) {
     const indexRequest = new Request(new URL('/index.html', req.url));
     return await serveDir(indexRequest, {
-      fsRoot: "./dist",
+      fsRoot: "dist",
       quiet: true,
     });
   }
