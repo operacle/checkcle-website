@@ -48,12 +48,17 @@ const Navbar = () => {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <a onClick={() => scrollToSection('home')} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors">Home</a>
+              <Link to="/" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</Link>
               <a onClick={() => scrollToSection('features')} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors">Features</a>
               <Link to="/our-story" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Our Story</Link>
               <Link to="/sponsor" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Sponsor</Link>
               <Link to="/support" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Support</Link>
-              <a onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors">FAQ</a>
+              <Link
+  to="/#faq"
+  className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
+>
+  FAQ
+</Link>
               <a href="https://docs.checkcle.io" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors">Docs</a>
               <GitHubStarButton />
             </div>
@@ -72,12 +77,17 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-[#020617]/95 backdrop-blur-md">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a onClick={() => scrollToSection('home')} className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium cursor-pointer">Home</a>
+            <Link to="/" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</Link>
             <a onClick={() => scrollToSection('features')} className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium cursor-pointer">Features</a>
             <Link to="/our-story" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Our Story</Link>
             <Link to="/sponsor" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Sponsor</Link>
             <Link to="/support" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Support</Link>
-            <a onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium cursor-pointer">FAQ</a>
+            <Link
+  to="/#faq"
+  className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
+>
+  FAQ
+</Link>
             <a href="https://docs.checkcle.io" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors">Docs</a>
             <div className="px-3 py-2">
               <GitHubStarButton />
