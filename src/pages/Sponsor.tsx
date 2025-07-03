@@ -77,7 +77,6 @@ const Sponsor = () => {
           <Heart className="w-16 h-16 text-emerald-400 mx-auto mb-6 animate-pulse" />
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
             Support CheckCle 
-            <br/> Improving the open-source ecosystem
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
             Help us build the future of infrastructure monitoring. Your sponsorship enables us to maintain, 
@@ -100,6 +99,16 @@ const Sponsor = () => {
             >
               One-time Donation
             </Button>
+          </div>
+        </div>
+      </section>
+          {/* Our Mission */}
+      <section className="py-16 bg-black">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-white/5 rounded-2xl p-8 border border-gray-800">
+            <p className="text-lg text-gray-300 leading-relaxed">
+              We are a self-funded startup and rely on your support to keep this project going. Your support allows us to focus on real users like you, rather than on investors or revenue. This work is possible because of your help, we build it, and you make it sustainable. If you choose our self-hosted, you can also support us through donations.
+            </p>
           </div>
         </div>
       </section>
