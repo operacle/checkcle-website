@@ -3,21 +3,34 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Sponsors from '../components/Sponsors';
-import { Heart, Star, Users, Zap, Gift, MessageCircle, Crown, Award } from 'lucide-react';
+import { Heart, Star, Users, Zap, Gift, MessageCircle, Crown, Award, HandIcon, OrbitIcon, ServerCogIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Sponsor = () => {
   const sponsorshipTiers = [
+        {
+      name: "Supporter ",
+     // price: "$10/month",
+      icon: HandIcon,
+      benefits: [
+        "Perfect for individuals who want to show appreciation and be part of our journey.",
+        "Your name/logo listed on our README (Supporter section)",
+        "Access to our Community Discord",
+      ],
+      color: "bg-amber-600"
+    },
+    
     {
       name: "Bronze Sponsor",
      // price: "$10/month",
       icon: Award,
       benefits: [
-        "Logo on our website",
-        "Monthly progress updates",
-        "Priority bug fixes",
-        "Community Discord access"
+        "Great for early adopters and friends of the project who want to help it grow.",
+        "Your name/logo listed on our README (Bronze section)",
+        "Display on Website Sponsor Page",
+        "Access to our Community Discord",
+        "Monthly project update email",
       ],
       color: "bg-amber-600"
     },
@@ -26,11 +39,13 @@ const Sponsor = () => {
     //  price: "$50/month",
       icon: Star,
       benefits: [
-        "All Bronze benefits",
-        "Logo in README",
-        "Feature request priority",
-        "Direct developer contact",
-        "Early access to new features"
+        "Ideal for community champions and teams who believe in open collaboration.",
+        "Your name/logo listed on our README (Silver section, higher priority than Bronze)",
+        "Display on Website Sponsor Page",
+        "Priority consideration of feature requests",
+        "Early access to beta features and releases",
+        "Access to our Community Discord",
+        "Monthly project updates",
       ],
       color: "bg-gray-400"
     },
@@ -39,11 +54,44 @@ const Sponsor = () => {
     //  price: "$100/month",
       icon: Crown,
       benefits: [
-        "All Silver benefits",
-        "Custom feature development",
-        "Monthly video call",
-        "Priority support",
-        "Company spotlight"
+        "For organizations and contributors committed to sustaining open-source innovation.",
+        "Your name/logo listed on our README (Gold section, top group)",
+        "Display on Website Sponsor Page",
+        "Display on Website Main Hero Area (lower position)",
+        "Early access to new features",
+        "Company spotlight in project updates",
+        "Access to our Community Discord",
+      ],
+      color: "bg-yellow-500"
+    },
+    {
+      name: "Platinum Sponsor",
+    //  price: "$100/month",
+      icon: OrbitIcon,
+      benefits: [
+        "For visionary partners who want to shape the project’s future together.",
+        "Display Name/Logo on README (Platinum section, top priority))",
+        "Display on Website Sponsor Page",
+        "Display on Website Main Hero Area (prominent position)",
+        "Dedicated support channel (Slack/Discord)",
+        "Company spotlight blog post & social media",
+        "Early access to new releases and security patches",
+        "Access to our Community Discord",
+      ],
+      color: "bg-yellow-500"
+    },
+    {
+      name: "Community & Custom Sponsor",
+    //  price: "$100/month",
+      icon: ServerCogIcon,
+      benefits: [
+        "For developer communities, tech media, infrastructure providers, or organizations supporting us in non-monetary ways.",
+        "Display your name/logo listed on our README (Community Partners section)",
+        "Display on Website Sponsor Page (Community Partners section)",
+        "Shoutout on social media and project updates",
+        "Eligible to co-host community events and webinars",
+        "Early access to community-focused features",
+        "Access to our Community Discord",
       ],
       color: "bg-yellow-500"
     }
@@ -86,7 +134,7 @@ const Sponsor = () => {
             <Button 
               size="lg" 
               className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3"
-              onClick={() => window.open('https://github.com/sponsors/checkcle', '_blank')}
+              onClick={() => window.open('https://github.com/sponsors/tolaleng', '_blank')}
             >
               <Heart className="w-5 h-5 mr-2" />
               Become a Sponsor
@@ -173,7 +221,7 @@ const Sponsor = () => {
                   </ul>
                   <Button 
                     className="w-full mt-6 bg-emerald-500 hover:bg-emerald-600 text-white"
-                    onClick={() => window.open('https://github.com/sponsors/checkcle', '_blank')}
+                    onClick={() => window.open('https://github.com/sponsors/tolaleng', '_blank')}
                   >
                     Choose {tier.name}
                   </Button>
@@ -194,20 +242,20 @@ const Sponsor = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-400 mb-2">7000+</div>
-              <div className="text-gray-300">Active Users</div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">10K+ Deployed</div>
+              <div className="text-gray-300">Empowering a growing community with reliable tools and support.</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-400 mb-2">5+</div>
-              <div className="text-gray-300">Contributors</div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">Contributors</div>
+              <div className="text-gray-300">Passionate developers and contributors driving continuous improvements.</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-400 mb-2">24/7</div>
-              <div className="text-gray-300">Monitoring</div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">Driving Progress</div>
+              <div className="text-gray-300">Ensuring performance, reliability, and peace of mind around the clock.</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-400 mb-2">99.9%</div>
-              <div className="text-gray-300">Demo Uptime</div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">Delivering</div>
+              <div className="text-gray-300">Demonstrating our commitment to stability and trustworthiness.</div>
             </div>
           </div>
         </div>
