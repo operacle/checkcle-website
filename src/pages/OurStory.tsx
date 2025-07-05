@@ -3,6 +3,8 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Heart, Code, Users, Zap } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const OurStory = () => {
   return (
@@ -133,6 +135,28 @@ const OurStory = () => {
         </div>
       </section>
 
+         {/* Sponsor Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-white/5 rounded-2xl p-12 border border-gray-800 max-w-4xl mx-auto">
+            <Heart className="w-16 h-16 text-emerald-400 mx-auto mb-6 animate-pulse" />
+            <h2 className="text-4xl font-bold text-white mb-6">Support Our Mission</h2>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              Help us continue building CheckCle and keep it free and open source. Your sponsorship 
+              enables us to focus on what matters most — creating the best monitoring platform for the community.
+            </p>
+            <Link to="/sponsor">
+              <Button 
+                size="lg" 
+                className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3"
+              >
+                <Heart className="w-5 h-5 mr-2" />
+                Become a Sponsor
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
       <Footer />
     </div>
   );
