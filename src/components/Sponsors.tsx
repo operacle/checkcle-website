@@ -3,20 +3,20 @@ import { motion } from 'framer-motion';
 
 const sponsors = [
   { 
-    name: 'AWS', 
-    logo: '/reamstack-uploads/d1e10e70-470a-42a0-a5cf-acad974a2348.png'
+    name: 'Digital Ocean', 
+    logo: '/uploads/digitalocean.png'
   },
   { 
     name: 'Ezecom', 
-    logo: '/reamstack-uploads/184fe510-34a3-4bb5-93cf-ad4e039c61d8.png'
+    logo: '/uploads/ezecom.png'
   },
   { 
     name: 'Online', 
-    logo: '/reamstack-uploads/01ff563f-a2bd-400f-9b69-8e7225eecfbc.png'
+    logo: '/uploads/01ff563f-a2bd-400f-9b69-8e7225eecfbc.png'
   },
   { 
     name: 'DPDC', 
-    logo: '/reamstack-uploads/10336b78-df32-4dac-ad8d-1d90fa8f99d9.png'
+    logo: '/uploads/10336b78-df32-4dac-ad8d-1d90fa8f99d9.png'
   }
 ];
 
