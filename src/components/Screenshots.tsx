@@ -12,6 +12,7 @@ const Screenshots = () => {
         title: "Server Monitoring",
         description: "Track server resources, performance metrics, and system health",
         imageSrc: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/instance-server-monitoring.png",
+        secondaryImage: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/server-detail-page.png",
         url: "checkcle.io/server/node01",
       }
     },
