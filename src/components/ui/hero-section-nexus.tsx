@@ -686,7 +686,7 @@ const InteractiveHero: React.FC = () => {
                 animate="visible"
                 className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto mb-8"
             >
-                An Open Source Full-Stack Monitoring System Platform, delivered with precision for uptime monitoring, server metrics, and smart alerts.
+                A <span className="font-bold bg-gradient-to-r from-emerald-400 via-yellow-500 to-purple-600 bg-clip-text text-transparent">Selft-hosted Open Source</span> Full-Stack Monitoring System Platform, delivered with precision for uptime monitoring, server metrics, and smart alerts.
             </motion.p>
 
             <motion.form
