@@ -2,7 +2,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Heart, Code, Users, Zap } from 'lucide-react';
+import { Heart, Code, Users, Zap, Github, Twitter, Facebook, ContainerIcon, Container} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -60,8 +60,8 @@ const OurStory = () => {
               </div>
             </div>
 
-            {/* Image */}
-            <div className="flex justify-center">
+           {/* Image and Social Links */}
+            <div className="flex flex-col items-center space-y-6">
               <div className="relative">
                 <img 
                   src="/tolaleng.jpg" 
@@ -69,6 +69,68 @@ const OurStory = () => {
                   className="rounded-2xl shadow-2xl max-w-md w-full"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-500/20 to-transparent rounded-2xl"></div>
+              </div>
+              {/* Social Media Icons */}
+              <div className="flex space-x-4">
+                <a 
+                  href="https://github.com/tolaleng" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <Button 
+                    variant="outline" 
+                    size="icon"
+                    className="bg-white/10 border-white/20 hover:bg-white/20 transition-colors"
+                  >
+                    <Github className="w-5 h-5 text-white group-hover:text-emerald-400 transition-colors" />
+                  </Button>
+                </a>
+
+                   <a 
+                  href="https://hub.docker.com/r/operacle/checkcle" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <Button 
+                    variant="outline" 
+                    size="icon"
+                    className="bg-white/10 border-white/20 hover:bg-white/20 transition-colors"
+                  >
+                    <Container className="w-5 h-5 text-white group-hover:text-emerald-400 transition-colors" />
+                  </Button>
+                </a>
+                
+                <a 
+                  href="https://x.com/tlengoss" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <Button 
+                    variant="outline" 
+                    size="icon"
+                    className="bg-white/10 border-white/20 hover:bg-white/20 transition-colors"
+                  >
+                    <Twitter className="w-5 h-5 text-white group-hover:text-blue-400 transition-colors" />
+                  </Button>
+                </a>
+                
+                <a 
+                  href="https://fb.me/gettolaleng" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <Button 
+                    variant="outline" 
+                    size="icon"
+                    className="bg-white/10 border-white/20 hover:bg-white/20 transition-colors"
+                  >
+                    <Facebook className="w-5 h-5 text-white group-hover:text-blue-600 transition-colors" />
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
