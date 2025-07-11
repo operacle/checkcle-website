@@ -15,8 +15,8 @@ const sponsors = [
     logo: '/uploads/01ff563f-a2bd-400f-9b69-8e7225eecfbc.png'
   },
   { 
-    name: 'DPDC', 
-    logo: '/uploads/10336b78-df32-4dac-ad8d-1d90fa8f99d9.png'
+    name: 'Operacle', 
+    logo: '/uploads/operacle-logo.png'
   }
 ];
 
