@@ -2,7 +2,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Heart, Code, Users, Zap, Github, Twitter, Facebook, ContainerIcon, Container} from 'lucide-react';
+import { Heart, Code, Users, Zap, Github, Twitter, Linkedin, ContainerIcon, Container} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -118,7 +118,7 @@ const OurStory = () => {
                 </a>
                 
                 <a 
-                  href="https://fb.me/gettolaleng" 
+                  href="https://linkedin.com/company/checkcle" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="group"
@@ -128,7 +128,7 @@ const OurStory = () => {
                     size="icon"
                     className="bg-white/10 border-white/20 hover:bg-white/20 transition-colors"
                   >
-                    <Facebook className="w-5 h-5 text-white group-hover:text-blue-600 transition-colors" />
+                    <Linkedin className="w-5 h-5 text-white group-hover:text-blue-600 transition-colors" />
                   </Button>
                 </a>
               </div>

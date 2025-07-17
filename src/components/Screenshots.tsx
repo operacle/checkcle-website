@@ -22,7 +22,7 @@ const Screenshots = () => {
       content: {
         title: "Uptime Monitoring",
         description: "Monitor your website's availability and performance with real-time alerts",
-        imageSrc: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/uptime-monitoring.png",
+        imageSrc: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/uptime-1.4.png",
         secondaryImage: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/uptime-service-detail.png",
         url: "checkcle.io/dashboard",
       }
@@ -34,7 +34,7 @@ const Screenshots = () => {
       content: {
         title: "SSL & Domain Monitoring",
         description: "Track SSL certificates expiration and domain health status",
-        imageSrc: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/ssl-monitoring.png",
+        imageSrc: "https://pub-4a4062303020445f8f289a2fee84f9e8.r2.dev/images/ssl-1.4.png",
         url: "checkcle.io/ssl",
       }
     },
