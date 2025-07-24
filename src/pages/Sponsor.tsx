@@ -10,7 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 const Sponsor = () => {
   const sponsorshipTiers = [
         {
-      name: "Supporter ",
+      name: "🧡 Ping Supporter ",
      // price: "$10/month",
       icon: HandIcon,
       benefits: [
@@ -22,7 +22,7 @@ const Sponsor = () => {
     },
     
     {
-      name: "Bronze Sponsor",
+      name: "🥉 Bronze Monitor",
      // price: "$10/month",
       icon: Award,
       benefits: [
@@ -35,7 +35,7 @@ const Sponsor = () => {
       color: "bg-amber-600"
     },
     {
-      name: "Silver Sponsor",
+      name: "🥈 Silver Uptime Ally",
     //  price: "$50/month",
       icon: Star,
       benefits: [
@@ -50,7 +50,7 @@ const Sponsor = () => {
       color: "bg-gray-400"
     },
     {
-      name: "Gold Sponsor",
+      name: "🥇 Gold Alert Guardian",
     //  price: "$100/month",
       icon: Crown,
       benefits: [
@@ -65,7 +65,7 @@ const Sponsor = () => {
       color: "bg-yellow-500"
     },
     {
-      name: "Platinum Sponsor",
+      name: "💎 Platinum Watchtower",
     //  price: "$100/month",
       icon: OrbitIcon,
       benefits: [
@@ -81,7 +81,7 @@ const Sponsor = () => {
       color: "bg-yellow-500"
     },
     {
-      name: "Community & Custom Sponsor",
+      name: "🤝 Ecosystem & Community Partner",
     //  price: "$100/month",
       icon: ServerCogIcon,
       benefits: [
@@ -153,9 +153,9 @@ const Sponsor = () => {
           {/* Our Mission */}
       <section className="py-16 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-white/5 rounded-2xl p-8 border border-gray-800">
+          <div className="bg-white/5 rounded-2xl p-8 border border-yellow-800">
             <p className="text-lg text-gray-300 leading-relaxed">
-              We are a self-funded startup and rely on your support to keep this project going. Your support allows us to focus on real users like you, rather than on investors or revenue. This work is possible because of your help, we build it, and you make it sustainable. If you choose our self-hosted, you can also support us through donations.
+              💡 Built for You, Sustained by You.  I'm an independent, self-funded developer driven by passion. Your support helps me focus on what truly matters: you and your needs. Every contribution keeps CheckCle open, self-hosted, and improving for everyone. If you find value in my work, I warmly welcome your support through donations to help me keep growing and maintaining the project.
             </p>
           </div>
         </div>
@@ -242,20 +242,20 @@ const Sponsor = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-400 mb-2">10K+ Deployed</div>
-              <div className="text-gray-300">Empowering a growing community with reliable tools and support.</div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">Self-Hosted Open Source</div>
+              <div className="text-gray-300">Your support sustains a self-hosted, developer-friendly monitoring system used worldwide.</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-400 mb-2">Contributors</div>
-              <div className="text-gray-300">Passionate developers and contributors driving continuous improvements.</div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">Global Accessibility</div>
+              <div className="text-gray-300">Free and open for individuals, small teams, and education—no vendor lock-in, no limits.</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-400 mb-2">Driving Progress</div>
-              <div className="text-gray-300">Ensuring performance, reliability, and peace of mind around the clock.</div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">Community Empowerment</div>
+              <div className="text-gray-300">Sponsorships help scale features and languages to serve a diverse global tech ecosystem.</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-400 mb-2">Delivering</div>
-              <div className="text-gray-300">Demonstrating our commitment to stability and trustworthiness.</div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">Faster Innovation</div>
+              <div className="text-gray-300">Enables rapid development of core features: alerts, agents, webhooks, and support tools.</div>
             </div>
           </div>
         </div>
