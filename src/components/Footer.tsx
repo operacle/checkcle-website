@@ -10,8 +10,8 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4">Resources</h3>
             <ul className="space-y-2">
               <li><a href="https://docs.checkcle.io" className="text-gray-400 hover:text-white">Documentation</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Team</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Blog</a></li>
+              <li><a href="/support" className="text-gray-400 hover:text-white">Support</a></li>
+              <li><a href="/blog" className="text-gray-400 hover:text-white">Blog</a></li>
             </ul>
           </div>
           
