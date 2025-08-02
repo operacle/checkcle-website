@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import GitHubStarButton from '@/components/ui/github-star-button';
+import StarOnGithub from '@/components/ui/button-github';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -54,7 +54,7 @@ const Navbar = () => {
               <Link to="/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</Link>
               <Link to="/sponsor" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Sponsor</Link>
               <a href="https://docs.checkcle.io" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors">Docs</a>
-              <GitHubStarButton />
+              <StarOnGithub />
             </div>
           </div>
           <div className="md:hidden">
@@ -85,7 +85,7 @@ const Navbar = () => {
             </Link>
             <a href="https://docs.checkcle.io" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors">Docs</a>
             <div className="px-3 py-2">
-              <GitHubStarButton />
+              <StarOnGithub />
             </div>
           </div>
         </div>
