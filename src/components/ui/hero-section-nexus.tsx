@@ -25,7 +25,7 @@ import {
     type TargetAndTransition,
     type Variants,
 } from 'framer-motion';
-import { ArrowRight, Rocket, FileText, Copy } from 'lucide-react';
+import { ArrowRight, Rocket, FileText, Copy, Play, Sparkles, Zap } from 'lucide-react';
 
 function cn(...classes: (string | undefined | null | boolean)[]): string {
   return classes.filter(Boolean).join(" ");
@@ -640,130 +640,205 @@ const InteractiveHero: React.FC = () => {
   return (
     <div className="relative bg-black text-white min-h-screen flex flex-col overflow-x-hidden">
         <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none opacity-80" />
+        
+        {/* Enhanced gradient overlay */}
         <div className="absolute inset-0 z-1 pointer-events-none" style={{
-            background: 'linear-gradient(to bottom, transparent 0%, #000000 90%), radial-gradient(ellipse at center, transparent 40%, #000000 95%)'
+            background: `
+                radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(59, 130, 246, 0.05) 50%, rgba(168, 85, 247, 0.05) 100%),
+                linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 50%, #000000 95%)
+            `
         }}></div>
 
         <main className="flex-grow flex flex-col items-center justify-center text-center px-4 pt-32 pb-16 relative z-10">
 
+            {/* Modern announcement banner with glassmorphism */}
             <motion.div
                 variants={bannerVariants}
                 initial="hidden"
                 animate="visible"
-                className="mb-6"
+                className="mb-8 group cursor-pointer"
             >
-                <ShinyText text="Self-hosted open-source. Released under the MIT License" className="bg-emerald-950/50 border border-emerald-800/30 text-emerald-400 px-4 py-1 rounded-full text-xs sm:text-sm font-medium cursor-pointer hover:border-emerald-700/50 transition-colors" />
+                <div className="relative inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-xl border border-white/10 text-white px-6 py-3 rounded-full text-sm font-medium hover:border-emerald-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+                    <Sparkles className="w-4 h-4 text-emerald-400" />
+                    <span className="bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent font-semibold">
+                        Self-hosted open-source. Released under the MIT License
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-emerald-400 group-hover:translate-x-1 transition-transform" />
+                    
+                    {/* Subtle glow effect */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-500/20 via-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10"></div>
+                </div>
             </motion.div>
 
+            {/* Enhanced main headline */}
             <motion.h1
                 variants={headlineVariants}
                 initial="hidden"
                 animate="visible"
-                className="text-4xl sm:text-5xl lg:text-[64px] font-semibold text-white leading-tight max-w-4xl mb-4"
+                className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[0.9] max-w-6xl mb-6"
+                style={{ 
+                    fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
+                    letterSpacing: "-0.025em"
+                }}
             >
-                Real-Time Infrastructure Monitoring with{' '}
-                <span className="inline-block h-[1.2em] sm:h-[1.2em] lg:h-[1.2em] overflow-hidden align-bottom">
-                    <RotatingText
-                        texts={['Self-Hosted', 'Privacy-First', 'Deploy Anywhere', 'Without Vendor Lock-In', 'Fully Controlled', 'Enterprise-Grade']}
-                        mainClassName="text-emerald-400 mx-1"
-                        staggerFrom={"last"}
-                        initial={{ y: "-100%", opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: "110%", opacity: 0 }}
-                        staggerDuration={0.01}
-                        transition={{ type: "spring", damping: 18, stiffness: 250 }}
-                        rotationInterval={2200}
-                        splitBy="characters"
-                        auto={true}
-                        loop={true}
-                    />
+                <span className="relative inline-block">
+                    Real-Time 
+                    {/* Subtle text shadow for depth */}
+                    <span className="absolute inset-0 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent opacity-10 blur-sm -z-10">
+                        Real-Time 
+                    </span>
+                </span>
+                <br />
+                <span className="relative inline-block bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    Infrastructure
+                    {/* Glow effect for the gradient text */}
+                    <span className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent opacity-50 blur-lg -z-10">
+                        Infrastructure
+                    </span>
+                </span>
+                <br />
+                <span className="text-gray-200">
+                    with{' '}
+                    <span className="inline-block h-[1.2em] overflow-hidden align-bottom relative">
+                        <RotatingText
+                            texts={['Deploy Anywhere', 'Privacy First', 'Fully Controlled', 'No Vendor Lock-in', 'Enterprise-Grade']}
+                            mainClassName="text-emerald-400 mx-1 font-black"
+                            staggerFrom={"last"}
+                            initial={{ y: "-100%", opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: "110%", opacity: 0 }}
+                            staggerDuration={0.01}
+                            transition={{ type: "spring", damping: 18, stiffness: 250 }}
+                            rotationInterval={2200}
+                            splitBy="characters"
+                            auto={true}
+                            loop={true}
+                        />
+                        {/* Subtle glow for rotating text */}
+                        <div className="absolute inset-0 bg-emerald-400/20 blur-xl opacity-30 -z-10"></div>
+                    </span>
                 </span>
             </motion.h1>
 
+            {/* Enhanced subtitle with better typography */}
             <motion.p
                 variants={subHeadlineVariants}
                 initial="hidden"
                 animate="visible"
-                className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto mb-8"
+                className="text-lg sm:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed"
+                style={{ fontFamily: "'Inter', system-ui, -apple-system, sans-serif" }}
             >
-                A <span className="font-bold bg-gradient-to-r from-emerald-400 via-yellow-500 to-purple-600 bg-clip-text text-transparent">Selft-hosted Open Source</span> Full-Stack Monitoring System Platform, delivered with precision for uptime monitoring, server metrics, and smart alerts.
+                An{' '}
+                <span className="relative font-bold bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    Open Source
+                    <Zap className="inline w-5 h-5 ml-1 text-emerald-400" />
+                </span>
+                {' '}Full-Stack Monitoring Platform
+                <br className="hidden sm:block" />
+                <span className="text-gray-400 text-base sm:text-lg block mt-2">
+                    Delivered with precision for uptime monitoring, server metrics, and smart alerts
+                </span>
             </motion.p>
 
-            <motion.form
+            {/* Enhanced button group with better spacing and effects */}
+            <motion.div
                 variants={formVariants}
                 initial="hidden"
                 animate="visible"
-                className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mx-auto mb-8"
-                onSubmit={(e: FormEvent<HTMLFormElement>) => e.preventDefault()}
+                className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-2xl mx-auto mb-12"
             >
+                {/* Primary CTA with enhanced design */}
                 <motion.a
                     href="https://demo.checkcle.io"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-emerald-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-emerald-400 transition-colors whitespace-nowrap"
-                    whileHover={{ scale: 1.03, y: -1 }}
-                    whileTap={{ scale: 0.97 }}
+                    className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-black px-8 py-4 rounded-2xl font-bold text-lg hover:from-emerald-400 hover:to-emerald-500 transition-all duration-300 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-1"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                     transition={{ type: "spring", stiffness: 400, damping: 15 }}
                 >
+                    <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
                     Try Live Demo
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-400 to-emerald-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl -z-10"></div>
                 </motion.a>
                 
+                {/* Secondary CTA with glassmorphism */}
                 <motion.a
                     href="https://github.com/operacle/checkcle"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-colors whitespace-nowrap"
-                    whileHover={{ scale: 1.03, y: -1 }}
-                    whileTap={{ scale: 0.97 }}
+                    className="group relative inline-flex items-center gap-3 bg-white/5 backdrop-blur-xl border border-white/10 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/10 hover:border-white/20 transition-all duration-300 shadow-lg hover:shadow-white/10 hover:-translate-y-1"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                     transition={{ type: "spring", stiffness: 400, damping: 15 }}
                 >
+                    <svg className="w-5 h-5 group-hover:rotate-12 transition-transform" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
                     GitHub
                 </motion.a>
+            </motion.div>
 
-                <motion.div
-                    className="relative group cursor-pointer"
-                    whileHover={{ scale: 1.03, y: -1 }}
-                    whileTap={{ scale: 0.97 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                    onClick={handleCopyCommand}
-                >
-                    <div className="flex items-center gap-2 bg-gray-800/50 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700/50 transition-colors whitespace-nowrap border border-gray-600/30 hover:border-gray-500/50">
-                        <code className="text-sm font-mono">
-                            curl -fsSL https://checkcle.io/install.sh | bash
-                        </code>
-                        <Copy className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
-                    </div>
-                </motion.div>
-            </motion.form>
+            {/* Enhanced one-click install with better visual design */}
+            <motion.div
+                variants={formVariants}
+                initial="hidden"
+                animate="visible"
+                className="mb-12"
+            >
+                <div className="flex flex-col items-center gap-3">
+                    <span className="text-sm text-gray-400 font-medium tracking-wide uppercase">One-Click Install</span>
+                    <motion.div
+                        className="relative group cursor-pointer"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                        onClick={handleCopyCommand}
+                    >
+                        <div className="flex items-center gap-3 bg-gray-900/50 backdrop-blur-xl border border-gray-700/50 text-gray-100 px-6 py-4 rounded-2xl font-mono text-sm hover:bg-gray-800/50 hover:border-gray-600/50 transition-all duration-300 shadow-lg hover:shadow-gray-900/20">
+                            <code className="text-emerald-400 font-semibold">
+                                curl -fsSL https://checkcle.io/install.sh | bash
+                            </code>
+                            <Copy className="w-4 h-4 text-gray-400 group-hover:text-emerald-400 transition-colors" />
+                        </div>
+                        
+                        {/* Subtle glow on hover */}
+                        <div className="absolute inset-0 rounded-2xl bg-emerald-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl -z-10"></div>
+                    </motion.div>
+                </div>
+            </motion.div>
 
-            {/* Additional buttons section */}
+            {/* Enhanced additional links with modern card design */}
             <motion.div
                 variants={buttonVariants}
                 initial="hidden"
                 animate="visible"
-                className="flex flex-wrap gap-4 justify-center mb-8"
+                className="flex flex-wrap gap-4 justify-center"
             >
-                {/* ReamStack Cloud-Hosted announcement */}
+                {/* Cloud hosted announcement */}
                 <a 
                     href="https://github.com/operacle/checkcle/releases"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white/90 hover:bg-white/20 transition-colors group"
+                    className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-xl border border-purple-400/20 text-purple-200 hover:border-purple-400/40 hover:from-purple-500/20 hover:to-pink-500/20 transition-all duration-300"
                 >
-                    <Rocket className="w-4 h-4" />
-                    <span>Version Release</span>
+                    <Rocket className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                    <span className="font-medium">Version Release</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
                 
-                {/* Discord */}
+                {/* Discord with brand colors */}
                 <a 
                     href="https://discord.gg/xs9gbubGwX" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-6 py-3 rounded-lg bg-[#5865F2]/80 backdrop-blur-sm text-white hover:bg-[#5865F2] transition-colors"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#5865F2]/20 backdrop-blur-xl border border-[#5865F2]/30 text-white hover:bg-[#5865F2]/30 hover:border-[#5865F2]/50 transition-all duration-300"
                 >
-                    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
                     </svg>
-                    Discord
+                    <span className="font-medium">Discord</span>
                 </a>
                 
                 {/* Documentation */}
@@ -771,10 +846,10 @@ const InteractiveHero: React.FC = () => {
                     href="https://docs.checkcle.io" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-6 py-3 rounded-lg bg-emerald-500/10 backdrop-blur-sm text-white hover:bg-emerald-500/20 transition-colors"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-500/10 backdrop-blur-xl border border-blue-400/20 text-blue-200 hover:bg-blue-500/20 hover:border-blue-400/40 transition-all duration-300"
                 >
-                    <FileText className="w-5 h-5 mr-2" />
-                    Documentation
+                    <FileText className="w-4 h-4" />
+                    <span className="font-medium">Documentation</span>
                 </a>
             </motion.div>
 
