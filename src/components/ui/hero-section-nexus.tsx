@@ -664,7 +664,7 @@ const InteractiveHero: React.FC = () => {
                 <div className="relative inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-xl border border-white/10 text-white px-6 py-3 rounded-full text-sm font-medium hover:border-emerald-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
                     <Sparkles className="w-4 h-4 text-emerald-400" />
                     <span className="bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent font-semibold">
-                        Self-hosted open-source. Released under the MIT License
+                        Regional Distributed Monitoring. Released under the MIT License
                     </span>
                     <ArrowRight className="w-4 h-4 text-emerald-400 group-hover:translate-x-1 transition-transform" />
                     

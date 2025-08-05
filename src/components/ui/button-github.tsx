@@ -1,8 +1,39 @@
 
 import { Button } from '@/components/ui/button';
 import { GithubIcon } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function StarOnGithub() {
+  const [starCount, setStarCount] = useState<string>('1.2k');
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchStarCount = async () => {
+      try {
+        const response = await fetch('https://api.github.com/repos/operacle/checkcle');
+        const data = await response.json();
+        const stars = data.stargazers_count;
+        
+        // Format the star count
+        let formattedStars;
+        if (stars >= 1000) {
+          formattedStars = (stars / 1000).toFixed(1) + 'k';
+        } else {
+          formattedStars = stars.toString();
+        }
+        
+        setStarCount(formattedStars);
+      } catch (error) {
+        console.error('Failed to fetch star count:', error);
+        // Keep default value on error
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchStarCount();
+  }, []);
+
   return (
     <Button
       type="button"
@@ -29,7 +60,7 @@ export default function StarOnGithub() {
           ></path>
         </svg>
         <span className="font-display inline-block font-medium tracking-wider text-black tabular-nums dark:text-white">
-          1.2k
+          {loading ? '...' : starCount}
         </span>
       </div>
     </Button>
