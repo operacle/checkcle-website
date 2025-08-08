@@ -1,10 +1,11 @@
 
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import BlogFilter from '../components/BlogFilter';
 import { motion } from 'framer-motion';
 
 interface BlogPost {
@@ -23,6 +24,7 @@ interface BlogPost {
   created: string;
   updated: string;
   collectionId: string;
+  categories: string[];
 }
 
 const fetchBlogPosts = async (): Promise<BlogPost[]> => {
@@ -32,7 +34,7 @@ const fetchBlogPosts = async (): Promise<BlogPost[]> => {
   }
   const data = await response.json();
   const items: BlogPost[] = data.items || [];
-
+  
   // Sort posts by published_at (or fallback to created) in descending order
   return items.sort((a, b) =>
     new Date(b.published_at || b.created).getTime() - new Date(a.published_at || a.created).getTime()
@@ -41,10 +43,48 @@ const fetchBlogPosts = async (): Promise<BlogPost[]> => {
 
 
 const Blog = () => {
+  const [selectedCategory, setSelectedCategory] = useState('all');
   const { data: posts, isLoading, error } = useQuery({
     queryKey: ['blog-posts'],
     queryFn: fetchBlogPosts,
   });
+
+  const { filteredPosts, postCounts } = useMemo(() => {
+    if (!posts) return { filteredPosts: [], postCounts: {} };
+    
+    const publishedPosts = posts.filter(post => post.status === 'published');
+    
+    const counts: Record<string, number> = {
+      all: publishedPosts.length,
+      ecosystem: 0,
+      release: 0,
+      'community-partner': 0,
+      announcement: 0
+    };
+
+    // Count posts by category
+    publishedPosts.forEach(post => {
+      if (post.categories && Array.isArray(post.categories)) {
+        post.categories.forEach(category => {
+          if (counts.hasOwnProperty(category)) {
+            counts[category]++;
+          }
+        });
+      }
+    });
+
+    // Filter posts by selected category
+    const filtered = selectedCategory === 'all' 
+      ? publishedPosts
+      : publishedPosts.filter(post => 
+          post.categories && 
+          Array.isArray(post.categories) && 
+          post.categories.includes(selectedCategory)
+        );
+
+    return { filteredPosts: filtered, postCounts: counts };
+  }, [posts, selectedCategory]);
+
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -81,8 +121,8 @@ const Blog = () => {
     );
   }
 
-  const featuredPosts = posts?.filter(post => post.is_featured && post.status === 'published') || [];
-  const regularPosts = posts?.filter(post => !post.is_featured && post.status === 'published') || [];
+ const featuredPosts = filteredPosts.filter(post => post.is_featured);
+ const regularPosts = filteredPosts.filter(post => !post.is_featured);
 
   return (
     <div className="flex flex-col min-h-screen bg-black text-white">
@@ -111,11 +151,22 @@ const Blog = () => {
           </div>
         </section>
 
+         {/* Blog Filter */}
+        <section className="py-8 bg-[#020617]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <BlogFilter 
+              selectedCategory={selectedCategory}
+              onCategoryChange={setSelectedCategory}
+              postCounts={postCounts}
+            />
+          </div>
+        </section>
+
         {/* Featured Posts */}
         {featuredPosts.length > 0 && (
           <section className="py-16 bg-[#020617]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-bold mb-12 text-center">Featured Posts</h2>
+               {selectedCategory === 'all' && <h3 className="text-2xl font-bold mb-12 text-center">Featured Posts</h3>}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {featuredPosts.map((post, index) => (
                   <motion.article
@@ -166,58 +217,61 @@ const Blog = () => {
           </section>
         )}
 
-        {/* Regular Posts */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold mb-12 text-center">Latest Posts</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {regularPosts.map((post, index) => (
-                <motion.article
-                  key={post.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white/5 rounded-lg overflow-hidden hover:bg-white/10 transition-all duration-300 group"
-                >
-                  <div className="aspect-video bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
-                    {post.cover_image ? (
-                      <img 
-                        src={`https://blog.reamstack.com/api/files/${post.collectionId}/${post.id}/${post.cover_image}`}
-                        alt={post.title}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="text-white text-6xl font-bold opacity-50">R</div>
-                    )}
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center text-sm text-gray-400 mb-3">
-                      <User className="w-4 h-4 mr-2" />
-                      <span>{post.author_name}</span>
-                      <Calendar className="w-4 h-4 ml-4 mr-2" />
-                      <span>{formatDate(post.published_at)}</span>
+
+          {regularPosts.length > 0 && (
+          <section className="py-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              {selectedCategory === 'all' && featuredPosts.length > 0 && <h3 className="text-2xl font-bold mb-12 text-center">Latest Posts</h3>}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {regularPosts.map((post, index) => (
+                  <motion.article
+                    key={post.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="bg-white/5 rounded-lg overflow-hidden hover:bg-white/10 transition-all duration-300 group"
+                  >
+                    <div className="aspect-video bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
+                      {post.cover_image ? (
+                        <img 
+                          src={`https://blog.reamstack.com/api/files/${post.collectionId}/${post.id}/${post.cover_image}`}
+                          alt={post.title}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="text-white text-6xl font-bold opacity-50">R</div>
+                      )}
+                        </div>
+                        <div className="p-6">
+                      <div className="flex items-center text-sm text-gray-400 mb-3">
+                        <User className="w-4 h-4 mr-2" />
+                        <span>{post.author_name}</span>
+                        <Calendar className="w-4 h-4 ml-4 mr-2" />
+                        <span>{formatDate(post.published_at)}</span>
+                      </div>
+                      <Link to={`/blog/${post.slug}`}>
+                        <h3 className="text-xl font-semibold mb-3 group-hover:text-emerald-400 transition-colors cursor-pointer">
+                          {post.title}
+                        </h3>
+                      </Link>
+                      <p className="text-gray-300 mb-4 line-clamp-3">
+                        {post.meta_description}
+                      </p>
+                      <Link 
+                        to={`/blog/${post.slug}`}
+                        className="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors"
+                      >
+                        Read More
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Link>
                     </div>
-                    <Link to={`/blog/${post.slug}`}>
-                      <h3 className="text-xl font-semibold mb-3 group-hover:text-emerald-400 transition-colors cursor-pointer">
-                        {post.title}
-                      </h3>
-                    </Link>
-                    <p className="text-gray-300 mb-4 line-clamp-3">
-                      {post.meta_description}
-                    </p>
-                    <Link 
-                      to={`/blog/${post.slug}`}
-                      className="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors"
-                    >
-                      Read More
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Link>
-                  </div>
-                </motion.article>
-              ))}
+                  </motion.article>
+                ))}
+              </div>
+
             </div>
-          </div>
-        </section>
+             </section>
+        )}
       </main>
 
       <Footer />
