@@ -53,10 +53,6 @@ const Hero = () => {
       {/* Interactive Hero Section */}
       <InteractiveHero />
 
-      {/* Additional content below the hero */}
-      <div className="relative bg-black text-white pt-20 pb-20">
-       
-      </div>
     </section>
   );
 };
