@@ -694,10 +694,6 @@ const InteractiveHero: React.FC = () => {
                 <br />
                 <span className="relative inline-block bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
                     Infrastructure
-                    {/* Glow effect for the gradient text */}
-                    <span className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent opacity-50 blur-lg -z-10">
-                        Infrastructure
-                    </span>
                 </span>
                 <br />
                 <span className="text-gray-200">
@@ -718,7 +714,7 @@ const InteractiveHero: React.FC = () => {
                             loop={true}
                         />
                         {/* Subtle glow for rotating text */}
-                        <div className="absolute inset-0 bg-emerald-400/20 blur-xl opacity-30 -z-10"></div>
+                        <div className="inset-0 bg-emerald-400/20 blur-xl opacity-30 -z-10"></div>
                     </span>
                 </span>
             </motion.h1>
