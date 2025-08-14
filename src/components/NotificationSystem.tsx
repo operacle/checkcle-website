@@ -90,7 +90,7 @@ const NotificationSystem = () => {
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">Multi-Channel Delivery</h3>
                   <p className="text-gray-400">
-                    Send notifications via Email, SMS, Slack, Discord, Telegram, WhatsApp, Teams, and custom webhooks.
+                    Send notifications via Email, Slack, Discord, Telegram, Signal, Google Chat, and custom webhooks.
                   </p>
                 </div>
               </div>
