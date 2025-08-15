@@ -34,6 +34,11 @@ const NotificationSystem = () => {
       alt: "Signal notifications"
     },
     {
+      name: "Ntfy",
+      logo: "/uploads/notification/ntfy.png",
+      alt: "Signal notifications"
+    },
+    {
       name: "Webhook",
       logo: "/uploads/notification/webhook.png",
       alt: "Webhook notifications"
