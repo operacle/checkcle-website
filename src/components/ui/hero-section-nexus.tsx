@@ -692,7 +692,7 @@ const InteractiveHero: React.FC = () => {
                     </span>
                 </span>
                 <br />
-                <span className="relative inline-block bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                <span className="relative inline-block bg-gradient-to-r from-emerald-400 via-red-400 to-red-400 bg-clip-text text-transparent">
                     Infrastructure
                 </span>
                 <br />
