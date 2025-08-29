@@ -38,6 +38,16 @@ const NotificationSystem = () => {
       logo: "/uploads/notification/ntfy.png",
       alt: "Signal notifications"
     },
+     {
+      name: "Pushover",
+      logo: "/uploads/notification/pushover.png",
+      alt: "Pushover notifications"
+    },
+     {
+      name: "Notifiarr",
+      logo: "/uploads/notification/notifiarr.png",
+      alt: "Notifiarr notifications"
+    },
     {
       name: "Webhook",
       logo: "/uploads/notification/webhook.png",
