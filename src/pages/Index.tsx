@@ -2,6 +2,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import Partners from '../components/Partners';
 import Challenges from '../components/Challenges';
 import Features from '../components/Features';
 import Screenshots from '../components/Screenshots';
@@ -16,6 +17,7 @@ const Index = () => {
     <div className="flex flex-col min-h-screen bg-black text-white">
       <Navbar />
       <Hero />
+      <Partners />
       <Challenges />
       <Features />
       <Screenshots />

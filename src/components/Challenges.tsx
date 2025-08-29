@@ -65,7 +65,7 @@ const Challenges = () => {
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">CheckCle App</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">CheckCle Open Source</h2>
           <p className="text-xl text-[#FEF7CD]">Challenges We Solve</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
