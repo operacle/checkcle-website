@@ -25,7 +25,7 @@ interface BlogPost {
 }
 
 const fetchBlogPost = async (slug: string): Promise<BlogPost | null> => {
-  const response = await fetch(`https://blog.reamstack.com/api/collections/blog_detail/records?filter=(slug="${slug}")`);
+  const response = await fetch(`https://blog-api.checkcle.io/api/collections/blog_detail/records?filter=(slug="${slug}")`);
   if (!response.ok) {
     throw new Error('Failed to fetch blog post');
   }
@@ -190,7 +190,7 @@ const BlogDetail = () => {
               className="mb-12"
             >
               <img 
-                src={`https://blog.reamstack.com/api/files/${post.collectionId}/${post.id}/${post.cover_image}`}
+                src={`https://blog-api.checkcle.io/api/files/${post.collectionId}/${post.id}/${post.cover_image}`}
                 alt={post.title}
                 className="w-full h-96 object-cover rounded-lg"
               />

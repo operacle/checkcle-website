@@ -28,7 +28,7 @@ interface BlogPost {
 }
 
 const fetchBlogPosts = async (): Promise<BlogPost[]> => {
-  const response = await fetch('https://blog.reamstack.com/api/collections/blog_detail/records');
+  const response = await fetch('https://blog-api.checkcle.io/api/collections/blog_detail/records');
   if (!response.ok) {
     throw new Error('Failed to fetch blog posts');
   }
@@ -179,7 +179,7 @@ const Blog = () => {
                     <div className="aspect-video bg-gradient-to-br from-emerald-600 to-teal-600 flex items-center justify-center">
                       {post.cover_image ? (
                         <img 
-                          src={`https://blog.reamstack.com/api/files/${post.collectionId}/${post.id}/${post.cover_image}`}
+                          src={`https://blog-api.checkcle.io/api/files/${post.collectionId}/${post.id}/${post.cover_image}`}
                           alt={post.title}
                           className="w-full h-full object-cover"
                         />
@@ -234,7 +234,7 @@ const Blog = () => {
                     <div className="aspect-video bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
                       {post.cover_image ? (
                         <img 
-                          src={`https://blog.reamstack.com/api/files/${post.collectionId}/${post.id}/${post.cover_image}`}
+                          src={`https://blog-api.checkcle.io/api/files/${post.collectionId}/${post.id}/${post.cover_image}`}
                           alt={post.title}
                           className="w-full h-full object-cover"
                         />
