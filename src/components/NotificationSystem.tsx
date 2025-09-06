@@ -49,6 +49,11 @@ const NotificationSystem = () => {
       alt: "Notifiarr notifications"
     },
     {
+      name: "Gotify",
+      logo: "/uploads/notification/gotify.png",
+      alt: "Gotify notifications"
+    },
+    {
       name: "Webhook",
       logo: "/uploads/notification/webhook.png",
       alt: "Webhook notifications"
