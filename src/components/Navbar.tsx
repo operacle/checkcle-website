@@ -52,7 +52,6 @@ const Navbar = () => {
               <a onClick={() => scrollToSection('features')} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors">Features</a>
               <Link to="/our-story" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Our Story</Link>
               <Link to="/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</Link>
-              <Link to="/sponsor" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Sponsor</Link>
               <a href="https://docs.checkcle.io" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors">Docs</a>
               <StarOnGithub />
             </div>
