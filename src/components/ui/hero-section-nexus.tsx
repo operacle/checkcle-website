@@ -735,7 +735,7 @@ const InteractiveHero: React.FC = () => {
                 {' '}Full-Stack Monitoring Platform
                 <br className="hidden sm:block" />
                 <span className="text-gray-400 text-base sm:text-lg block mt-2">
-                    Delivered with precision for uptime monitoring, server metrics, and smart alerts
+                    Delivered with precision for uptime monitoring, server metrics, and smart alerts. Built for the community, and designed to provide observability for infrastructure, DevOps, and SRE.
                 </span>
             </motion.p>
 
