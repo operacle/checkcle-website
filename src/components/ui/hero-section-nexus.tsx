@@ -685,15 +685,15 @@ const InteractiveHero: React.FC = () => {
                 }}
             >
                 <span className="relative inline-block">
-                    Real-Time 
+                    Observability
                     {/* Subtle text shadow for depth */}
                     <span className="absolute inset-0 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent opacity-10 blur-sm -z-10">
-                        Real-Time 
+                        Observability
                     </span>
                 </span>
                 <br />
                 <span className="relative inline-block bg-gradient-to-r from-emerald-400 via-red-400 to-red-400 bg-clip-text text-transparent">
-                    Infrastructure
+                   for Infrastructure
                 </span>
                 <br />
                 <span className="text-gray-200">
