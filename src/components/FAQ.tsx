@@ -52,32 +52,11 @@ const faqData = [
   },
 {
   id: "item-11",
-  question: "Sponsorship & Support",
+  question: "Can I donate?",
   answer: (
     <>
-      Yes! CheckCle is a community-driven open-source project, and we welcome sponsorships to help cover server costs, domain fees, and future development.
-      <br />
-      <br />
-      1. What do sponsors get in return?
-      <br />
-      Sponsors will have their name and logo featured on the CheckCle.io website, GitHub README, Credits section (depending on tier).
-      <br />
-      <br />
-      2. How can I become a sponsor?
-      <br />
-      You can contact me directly via Discord or visit our GitHub repository to learn more.
-Currently, sponsorship functionality is not yet implemented, but I plan to set it up soon. Stay tuned!
-      <br />
-      <br />
-      3. Do you accept community or infrastructure sponsors?
-      <br />
-      Yes. If you're a cloud provider, server host, or tech community that wants to support the mission, we’d love to collaborate.
-      <br />
-      <br />
-      4. Is there a sponsorship tier or plan?
-      <br />
-      Yes. Sponsorship tiers include Bronze, Silver, Gold, and Platinum — each with different benefits like logo placement, social media shoutouts, and early access to features.
-      <br />
+      Currently, no. While I truly appreciate the past donations (and remain grateful to everyone who supported the project), I’ve decided to stop accepting financial contributions from individuals.
+      If you represent an organization that provides sponsorships or grants and would like to support the ongoing development of CheckCle, feel free to reach out at tolaleng@checkcle.io
     </>
   )
 },
