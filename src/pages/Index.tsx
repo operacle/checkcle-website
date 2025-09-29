@@ -8,7 +8,6 @@ import Features from '../components/Features';
 import Screenshots from '../components/Screenshots';
 import TechStack from '../components/TechStack';
 import NotificationSystem from '../components/NotificationSystem';
-import Installation from '../components/Installation';
 import Stats from '../components/Stats';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
@@ -24,7 +23,6 @@ const Index = () => {
       <Screenshots />
       <NotificationSystem />
       <TechStack />
-      <Installation />
       <Stats />
       <FAQ />
       <Footer />
