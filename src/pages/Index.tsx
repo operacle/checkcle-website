@@ -9,6 +9,7 @@ import Screenshots from '../components/Screenshots';
 import TechStack from '../components/TechStack';
 import NotificationSystem from '../components/NotificationSystem';
 import Stats from '../components/Stats';
+import Contributors from '../components/Contributors';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 
@@ -24,6 +25,7 @@ const Index = () => {
       <NotificationSystem />
       <TechStack />
       <Stats />
+      <Contributors />
       <FAQ />
       <Footer />
     </div>
