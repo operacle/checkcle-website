@@ -1,12 +1,13 @@
 
 import React, { useState, useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { Calendar, User, ArrowRight } from 'lucide-react';
+import { Calendar, User, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BlogFilter from '../components/BlogFilter';
 import { motion } from 'framer-motion';
+import { Button } from '../components/ui/button';
 
 interface BlogPost {
   id: string;
@@ -28,29 +29,26 @@ interface BlogPost {
 }
 
 const fetchBlogPosts = async (): Promise<BlogPost[]> => {
-  const response = await fetch('https://blog-api.checkcle.io/api/collections/blog_detail/records');
+  const response = await fetch('https://blog-api.checkcle.io/api/collections/blog_detail/records?sort=-published_at');
   if (!response.ok) {
     throw new Error('Failed to fetch blog posts');
   }
   const data = await response.json();
-  const items: BlogPost[] = data.items || [];
-  
-  // Sort posts by published_at (or fallback to created) in descending order
-  return items.sort((a, b) =>
-    new Date(b.published_at || b.created).getTime() - new Date(a.published_at || a.created).getTime()
-  );
+  return data.items || [];
 };
-
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 6; 
+  
   const { data: posts, isLoading, error } = useQuery({
     queryKey: ['blog-posts'],
     queryFn: fetchBlogPosts,
   });
 
-  const { filteredPosts, postCounts } = useMemo(() => {
-    if (!posts) return { filteredPosts: [], postCounts: {} };
+  const { filteredPosts, postCounts, paginatedPosts, totalPages } = useMemo(() => {
+    if (!posts) return { filteredPosts: [], postCounts: {}, paginatedPosts: [], totalPages: 0 };
     
     const publishedPosts = posts.filter(post => post.status === 'published');
     
@@ -82,9 +80,19 @@ const Blog = () => {
           post.categories.includes(selectedCategory)
         );
 
-    return { filteredPosts: filtered, postCounts: counts };
-  }, [posts, selectedCategory]);
+    // Calculate pagination
+    const totalPages = Math.ceil(filtered.length / postsPerPage);
+    const startIndex = (currentPage - 1) * postsPerPage;
+    const endIndex = startIndex + postsPerPage;
+    const paginatedPosts = filtered.slice(startIndex, endIndex);
 
+    return { filteredPosts: filtered, postCounts: counts, paginatedPosts, totalPages };
+  }, [posts, selectedCategory, currentPage, postsPerPage]);
+
+  // Reset to first page when category changes
+  React.useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCategory]);
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -121,8 +129,13 @@ const Blog = () => {
     );
   }
 
- const featuredPosts = filteredPosts.filter(post => post.is_featured);
- const regularPosts = filteredPosts.filter(post => !post.is_featured);
+  const featuredPosts = paginatedPosts.filter(post => post.is_featured);
+  const regularPosts = paginatedPosts.filter(post => !post.is_featured);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-black text-white">
@@ -138,7 +151,7 @@ const Blog = () => {
               transition={{ duration: 0.8 }}
               className="text-5xl md:text-6xl font-bold mb-6 gradient-text"
             >
-              CheckCle Blog
+              CheckCle Community
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -151,7 +164,6 @@ const Blog = () => {
           </div>
         </section>
 
-         {/* Blog Filter */}
         <section className="py-8 bg-[#020617]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <BlogFilter 
@@ -166,7 +178,7 @@ const Blog = () => {
         {featuredPosts.length > 0 && (
           <section className="py-16 bg-[#020617]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-               {selectedCategory === 'all' && <h3 className="text-2xl font-bold mb-12 text-center">Featured Posts</h3>}
+              {selectedCategory === 'all' && <h3 className="text-2xl font-bold mb-12 text-center">Featured Posts</h3>}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {featuredPosts.map((post, index) => (
                   <motion.article
@@ -217,8 +229,7 @@ const Blog = () => {
           </section>
         )}
 
-
-          {regularPosts.length > 0 && (
+        {regularPosts.length > 0 && (
           <section className="py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               {selectedCategory === 'all' && featuredPosts.length > 0 && <h3 className="text-2xl font-bold mb-12 text-center">Latest Posts</h3>}
@@ -241,8 +252,8 @@ const Blog = () => {
                       ) : (
                         <div className="text-white text-6xl font-bold opacity-50">R</div>
                       )}
-                        </div>
-                        <div className="p-6">
+                    </div>
+                    <div className="p-6">
                       <div className="flex items-center text-sm text-gray-400 mb-3">
                         <User className="w-4 h-4 mr-2" />
                         <span>{post.author_name}</span>
@@ -268,9 +279,57 @@ const Blog = () => {
                   </motion.article>
                 ))}
               </div>
-
             </div>
-             </section>
+          </section>
+        )}
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <section className="py-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex justify-center items-center gap-4">
+                <Button
+                  variant="outline"
+                  size="default"
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className="flex items-center gap-2 px-4 py-2 border-emerald-400/30 text-emerald-400 hover:bg-emerald-400/10 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                  Previous
+                </Button>
+                
+                <div className="flex items-center gap-2">
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                    <Button
+                      key={page}
+                      variant={currentPage === page ? "default" : "ghost"}
+                      size="default"
+                      onClick={() => handlePageChange(page)}
+                      className={`min-w-[40px] h-10 ${
+                        currentPage === page 
+                          ? "bg-emerald-400 text-black hover:bg-emerald-500" 
+                          : "text-emerald-400 hover:bg-emerald-400/10"
+                      }`}
+                    >
+                      {page}
+                    </Button>
+                  ))}
+                </div>
+
+                <Button
+                  variant="outline"
+                  size="default"
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className="flex items-center gap-2 px-4 py-2 border-emerald-400/30 text-emerald-400 hover:bg-emerald-400/10 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Next
+                  <ChevronRight className="w-4 h-4" />
+                </Button>
+              </div>
+            </div>
+          </section>
         )}
       </main>
 
