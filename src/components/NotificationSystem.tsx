@@ -92,7 +92,7 @@ const NotificationSystem = () => {
           <div className="space-y-8">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Powerful Notification System
+                Powerful Notification
               </h2>
               <p className="text-lg md:text-xl text-gray-400 mb-8">
                 Stay informed instantly with our comprehensive multi-channel notification system. 
