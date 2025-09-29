@@ -266,22 +266,9 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
 RotatingText.displayName = "RotatingText";
 
 const ShinyText: React.FC<{ text: string; className?: string }> = ({ text, className = "" }) => (
-    <span className={cn("relative overflow-hidden inline-block", className)}>
+    <span className={cn("relative inline-block", className)}>
         {text}
-        <span style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
-            animation: 'shine 2s infinite linear',
-            opacity: 0.5,
-            pointerEvents: 'none'
-        }}></span>
-        <style>{`
-            @keyframes shine {
-                0% { transform: translateX(-100%); }
-                100% { transform: translateX(100%); }
-            }
-        `}</style>
+        
     </span>
 );
 
@@ -641,15 +628,9 @@ const InteractiveHero: React.FC = () => {
     <div className="relative bg-black text-white min-h-screen flex flex-col overflow-x-hidden">
         <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none opacity-80" />
         
-        {/* Enhanced gradient overlay */}
+        {/* Dark overlay */}
         <div className="absolute inset-0 z-1 pointer-events-none" style={{
-            background: `
-                radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
-                linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(59, 130, 246, 0.05) 50%, rgba(168, 85, 247, 0.05) 100%),
-                linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 50%, #000000 95%)
-            `
+            background: `rgba(0, 0, 0, 0.6)`
         }}></div>
 
         <main className="flex-grow flex flex-col items-center justify-center text-center px-4 pt-32 pb-16 relative z-10">
@@ -661,15 +642,13 @@ const InteractiveHero: React.FC = () => {
                 animate="visible"
                 className="mb-8 group cursor-pointer"
             >
-                <div className="relative inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-xl border border-white/10 text-white px-6 py-3 rounded-full text-sm font-medium hover:border-emerald-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+                   <div className="relative inline-flex items-center gap-2 bg-gray-900/50 backdrop-blur-xl border border-gray-700/30 text-white px-6 py-3 rounded-full text-sm font-medium hover:border-gray-600/50 transition-all duration-300 hover:bg-gray-800/50">
                     <Sparkles className="w-4 h-4 text-emerald-400" />
-                    <span className="bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent font-semibold">
+                    <span className="text-emerald-400 font-semibold">
                         Regional Distributed Monitoring. Released under the MIT License
                     </span>
                     <ArrowRight className="w-4 h-4 text-emerald-400 group-hover:translate-x-1 transition-transform" />
-                    
-                    {/* Subtle glow effect */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-500/20 via-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10"></div>
+                  
                 </div>
             </motion.div>
 
@@ -692,7 +671,7 @@ const InteractiveHero: React.FC = () => {
                     </span>
                 </span>
                 <br />
-                <span className="relative inline-block bg-gradient-to-r from-emerald-400 via-red-400 to-red-400 bg-clip-text text-transparent">
+                <span className="relative inline-block text-emerald-400">
                    for Infrastructure
                 </span>
                 <br />
@@ -758,7 +737,6 @@ const InteractiveHero: React.FC = () => {
                 >
                     <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
                     Try Live Demo
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-400 to-emerald-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl -z-10"></div>
                 </motion.a>
                 
                 {/* Secondary CTA with glassmorphism */}
