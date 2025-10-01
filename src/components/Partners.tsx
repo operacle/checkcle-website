@@ -17,6 +17,10 @@ const partners = [
   { 
     name: 'Operacle', 
     logo: 'https://cdn.checkcle.io/images/sponsor/operacle-t_logo.png'
+  },
+  { 
+    name: 'Jetbrains', 
+    logo: 'https://cdn.checkcle.io/images/sponsor/jetbrains-white.png'
   }
 ];
 
