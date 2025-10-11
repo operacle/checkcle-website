@@ -10,6 +10,10 @@ const partners = [
     name: 'DigitalOcean', 
     logo: 'https://cdn.checkcle.io/images/sponsor/digitalocean_checkcle.png'
   },
+   { 
+    name: 'BASAK CORP', 
+    logo: 'https://cdn.checkcle.io/images/sponsor/basak_logo.png'
+  },
   { 
     name: 'Gitbook', 
     logo: 'https://cdn.checkcle.io/images/sponsor/gitbook_logo.png'
