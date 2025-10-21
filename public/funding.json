@@ -21,8 +21,7 @@
         "url": "https://checkcle.io"
       },
       "repositoryUrl": {
-        "url": "https://github.com/operacle/checkcle",
-        "wellKnown": "https://github.com/operacle/checkcle/blob/main/.well-known/funding-manifest-urls"
+        "url": "https://github.com/operacle/checkcle"
       },
       "licenses": ["spdx:MIT"],
       "tags": ["monitoring", "infrastructure", "uptime", "server"]
