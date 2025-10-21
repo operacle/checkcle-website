@@ -1,0 +1,83 @@
+{
+  "version": "v1.0.0",
+  "entity": {
+    "type": "individual",
+    "role": "maintainer",
+    "name": "Tola Leng",
+    "email": "tolaleng.oss@gmail.com",
+    "phone": "",
+    "description": "I’m an open-source enthusiast driven by curiosity and freedom. Instead of just living within the systems around me, I build and improve them — believing that sharing knowledge and code is the path toward true innovation and collective liberation.",
+    "webpageUrl": {
+      "url": "https://author.checkcle.io",
+      "wellKnown": ""
+    }
+  },
+  "projects": [
+    {
+      "guid": "checkcle",
+      "name": "CheckCle",
+      "description": "CheckCle is a self-hosted, open-source monitoring platform for seamless, real-time full-stack systems, applications, and infrastructure. It provides real-time uptime monitoring, distributed checks, incident tracking, and alerts — all deployable anywhere.",
+      "webpageUrl": {
+        "url": "https://checkcle.io"
+      },
+      "repositoryUrl": {
+        "url": "https://github.com/operacle/checkcle",
+        "wellKnown": "https://github.com/operacle/checkcle/blob/main/.well-known/funding-manifest-urls"
+      },
+      "licenses": ["spdx:MIT"],
+      "tags": ["monitoring", "infrastructure", "uptime", "server"]
+    }
+  ],
+  "funding": {
+    "channels": [
+      {
+        "guid": "aba",
+        "type": "bank",
+        "address": "",
+        "description": "Accepts direct bank transfers. Please email me for details."
+      }
+    ],
+    "plans": [
+      {
+        "guid": "hosting-monthly",
+        "status": "active",
+        "name": "Hosting Support",
+        "description": "Covers the monthly server hosting costs for the projects.",
+        "amount": 250,
+        "currency": "USD",
+        "frequency": "monthly",
+        "channels": ["aba"]
+      },
+      {
+        "guid": "developer-time",
+        "status": "active",
+        "name": "Developer Compensation",
+        "description": "Supports the cost of one developer working part-time on the projects.",
+        "amount": 1000,
+        "currency": "USD",
+        "frequency": "monthly",
+        "channels": ["aba"]
+      },
+      {
+        "guid": "angel-plan",
+        "status": "active",
+        "name": "Goodwill Plan",
+        "description": "Contribute any amount you wish to show your goodwill toward the project.",
+        "amount": 0,
+        "currency": "USD",
+        "frequency": "one-time",
+        "channels": ["aba"]
+      }
+    ],
+    "history": [
+      {
+        "year": 2025,
+        "income": 50,
+        "expenses": 0,
+        "taxes": 0,
+        "currency": "USD",
+        "description": "Started accepting donations for the first time."
+      }
+    ]
+  }
+}
