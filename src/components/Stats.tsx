@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Stats = () => {
   const stats = [
     {
-      number: '50K+',
+      number: '70K+',
       label: 'Total Downloaded',
     },
     {
@@ -12,7 +12,7 @@ const Stats = () => {
       label: 'Monthly Site Visits',
     },
     {
-      number: '1.7K',
+      number: '2K',
       label: 'GitHub Stars',
     },
     {
