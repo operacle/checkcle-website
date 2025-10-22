@@ -2,7 +2,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Heart, Code, Users, Zap, Github, Twitter, Linkedin, ContainerIcon, Container} from 'lucide-react';
+import { Heart, Code, Users, Zap, Github, Twitter, Linkedin, ContainerIcon, Container, Earth} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -86,6 +86,20 @@ const OurStory = () => {
                     <Github className="w-5 h-5 text-white group-hover:text-emerald-400 transition-colors" />
                   </Button>
                 </a>
+                <a 
+                  href="https://author.checkcle.io" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <Button 
+                    variant="outline" 
+                    size="icon"
+                    className="bg-white/10 border-white/20 hover:bg-white/20 transition-colors"
+                  >
+                    <Earth className="w-5 h-5 text-white group-hover:text-blue-600 transition-colors" />
+                  </Button>
+                </a>
 
                    <a 
                   href="https://hub.docker.com/r/operacle/checkcle" 
@@ -114,21 +128,6 @@ const OurStory = () => {
                     className="bg-white/10 border-white/20 hover:bg-white/20 transition-colors"
                   >
                     <Twitter className="w-5 h-5 text-white group-hover:text-blue-400 transition-colors" />
-                  </Button>
-                </a>
-                
-                <a 
-                  href="https://linkedin.com/company/checkcle" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="group"
-                >
-                  <Button 
-                    variant="outline" 
-                    size="icon"
-                    className="bg-white/10 border-white/20 hover:bg-white/20 transition-colors"
-                  >
-                    <Linkedin className="w-5 h-5 text-white group-hover:text-blue-600 transition-colors" />
                   </Button>
                 </a>
               </div>
