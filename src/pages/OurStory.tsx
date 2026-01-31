@@ -117,7 +117,7 @@ const OurStory = () => {
                 </a>
                 
                 <a 
-                  href="https://x.com/checkcle_oss" 
+                  href="https://x.com/asqrm_io" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="group"

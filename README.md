@@ -33,5 +33,5 @@ This project is built with .
 - GitHub Repository: https://github.com/operacle/checkcle
 - Community Channels: Engage via discussions and issues!
 - Join our discord community: https://discord.gg/xs9gbubGwX
-- On X: [@checkcle_oss](https://x.com/checkcle_oss)
+- On X: [@asqrm_io](https://x.com/asqrm_io)
 

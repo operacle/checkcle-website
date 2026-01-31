@@ -20,7 +20,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="https://github.com/operacle/checkcle" className="text-gray-400 hover:text-white">GitHub</a></li>
               <li><a href="https://discord.gg/xs9gbubGwX" className="text-gray-400 hover:text-white">Discord</a></li>
-              <li><a href="https://x.com/checkcle_oss" className="text-gray-400 hover:text-white">Twitter</a></li>
+              <li><a href="https://x.com/asqrm_io" className="text-gray-400 hover:text-white">Twitter</a></li>
             </ul>
           </div>
           
@@ -29,7 +29,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="https://github.com/operacle/checkcle" className="text-gray-400 hover:text-white">Getting Started</a></li>
               <li><a href="https://github.com/operacle/checkcle/discussions" className="text-gray-400 hover:text-white">FAQ</a></li>
-              <li><a href="https://x.com/checkcle_oss" className="text-gray-400 hover:text-white">Contact</a></li>
+              <li><a href="https://x.com/asqrm_io" className="text-gray-400 hover:text-white">Contact</a></li>
             </ul>
           </div>
           
@@ -52,7 +52,7 @@ const Footer = () => {
               <a href="https://discord.gg/xs9gbubGwX" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <MessageCircle className="w-6 h-6" />
               </a>
-              <a href="https://x.com/checkcle_oss" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://x.com/asqrm_io" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Twitter className="w-6 h-6" />
               </a>
             </div>
